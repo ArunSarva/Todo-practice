@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path %> |
+  <%= link_to "Login", new_user_session_path %>
+<% end %>
+       <p class="alert"><%= alert %></p>
+<%= yield %>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Todo</title>
+    <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'%>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <%= csrf_meta_tags %>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/"><%= image_tag("logo.jpg",{:class=>"logo"}) %></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="todo_lists"><b>Home</b> <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><b>Link</b></a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <a class="nav-link" href="#"><b>Login</b></a>
+                <a class="nav-link" href="#"><b>sign up</b></a>
+                <% if user_signed_in? %>
+                  Logged in as <strong><%= current_user.email %></strong>.
+                  <a class="nav-link" href="#"><b>
+                    <%= link_to 'Edit profile', edit_user_registration_path %> |
+                    <%= link_to "Logout", destroy_user_session_path, method: :delete %></b>
+                  </a>
+                  
+                <% else %>
+                <a class="nav-link" href="#"><b>
+                  <%= link_to "Sign up", new_user_registration_path %> |
+                  <%= link_to "Login", new_user_session_path %></b>
+                  </a>
+                <% end %>
+            </form>
+        </div>
+    </nav>
+</head>
+
+<body>
+    <div class="container">
+        <%= yield %>
+    </div>
+</body>
+
+</html>
