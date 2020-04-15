@@ -1,28 +1,19 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+First clone the project : https://github.com/ArunSarva/Todo-practice
 
-Things you may want to cover:
+Needed version of ruby on rails:
 
-* Ruby version
+* Ruby version (ruby 2.5.0p0)
 
-* System dependencies
+* rails version (Rails 4.2.10)
 
-* Configuration
+After that set up gem file by using 
 
-* Database creation
+$ bundle install
 
-* Database initialization
+After that set up database by  using 
 
-* How to run the test suite
+$ rake db:migrate
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
