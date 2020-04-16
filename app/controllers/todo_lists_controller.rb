@@ -36,6 +36,7 @@ class TodoListsController < ApplicationController
       else
         format.html { render :new }
         format.json { render json: @todo_list.errors, status: :unprocessable_entity }
+        # flash.alert='files cant be empty' 
       end
     end
   end
@@ -48,7 +49,7 @@ class TodoListsController < ApplicationController
         format.html { redirect_to @todo_list, notice: 'Todo list was successfully updated.' }
         format.json { render :show, status: :ok, location: @todo_list }
       else
-        format.html { render :edit }
+        format.html { render :edit,notice: 'Todo list was successfully updated.' }
         format.json { render json: @todo_list.errors, status: :unprocessable_entity }
       end
     end
