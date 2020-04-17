@@ -1,0 +1,10 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  reconnect: false
+  database: todo-list 
+  pool: 5
+  username: postgres
+  password: newPassword
+  host: localhost
+  port: 5432
