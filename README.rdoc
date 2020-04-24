@@ -1,0 +1,19 @@
+== README
+
+First clone the project : https://github.com/ArunSarva/Todo-practice
+
+Needed version of ruby on rails:
+
+* Ruby version (ruby 2.5.0p0)
+
+* rails version (Rails 4.2.10)
+
+After that set up gem file by using 
+
+$ bundle install
+
+After that set up database by  using 
+
+$ rake db:migrate
+
+<tt>rake doc:app</tt>.
